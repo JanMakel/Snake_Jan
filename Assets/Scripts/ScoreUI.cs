@@ -9,6 +9,10 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
 
+
+
+    [SerializeField] private GameObject pointChangePrefab;
+    [SerializeField] private Transform pointParent;
     private void Awake()
     {
         if (Instance != null)
@@ -36,6 +40,16 @@ public class ScoreUI : MonoBehaviour
     {
         int highScore = Score.GetHighScore();
         highScoreText.text = highScore.ToString();
+    }
+
+    public void ShowPointChange(int change)
+    {
+        var inst = Instantiate(pointChangePrefab, Vector3.zero, Quaternion.identity);
+        inst.transform.SetParent(pointParent, false);
+
+        
+
+        
     }
 
     public void UpdateScoreText(int score)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LevelGrid
 {
@@ -11,6 +12,8 @@ public class LevelGrid
     private Snake snake;
 
     private int foodNum;
+
+    private FoodSO foodSO;
     public LevelGrid(int w, int h)
     {
         width = w;
@@ -27,6 +30,10 @@ public class LevelGrid
     {
         if (snakeGridPosition == foodGridPosition)
         {
+            ScoreUI.ShowPointChange(foodSO.points);
+            Score.AddScore(foodSO.points);
+
+            /*
             if (foodGameObject.CompareTag("apple"))
             {
                 Score.AddScore(Score.APPLEPOINTS);
@@ -39,6 +46,7 @@ public class LevelGrid
             {
                 Score.AddScore(Score.PIZZAPOINTS);
             }
+            */
             Object.Destroy(foodGameObject);
             SpawnFood();
              
@@ -63,9 +71,11 @@ public class LevelGrid
         } while (snake.GetFullSnakeBodyGridPosition().IndexOf(foodGridPosition) != -1);
         
         foodGameObject = new GameObject("Food");
-        foodNum = Random.Range(0, 3);
+        foodNum = Random.Range(0, GameAssets.Instance.foodSOArray.Length);
+        foodSO = GameAssets.Instance.foodSOArray[foodNum];
         SpriteRenderer foodSpriteRenderer = foodGameObject.AddComponent<SpriteRenderer>();
-        foodSpriteRenderer.sprite = GameAssets.Instance.foodSprite[foodNum];
+        foodSpriteRenderer.sprite = foodSO.sprite;
+        /*
         if (foodNum == 0)
         {
             foodGameObject.gameObject.tag = "apple";
@@ -78,6 +88,7 @@ public class LevelGrid
         {
             foodGameObject.gameObject.tag = "pizza";
         }
+        */
         foodGameObject.transform.position = new Vector3(foodGridPosition.x, foodGridPosition.y, 0);
       
     }

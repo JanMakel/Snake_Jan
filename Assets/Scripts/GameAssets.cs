@@ -19,8 +19,8 @@ public class GameAssets : MonoBehaviour
     public Sprite pizzaSprite;
 
     public Sprite[] foodSprite = new Sprite[] { };
-   
 
+    public FoodSO[] foodSOArray;
 
 
     public SoundAudioClip[] soundAudioClipsArray;

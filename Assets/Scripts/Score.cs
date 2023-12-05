@@ -4,9 +4,9 @@ using UnityEngine;
 public static class Score
 {
     public const string HIGH_SCORE = "highScore"; // Clave en PlayerPrefs
-    public const int APPLEPOINTS = 100; // Cantidad de puntos que ganamos al comer Manzanas
-    public const int CAKEPOINTS = 300; // Cantidad de puntos que ganamos al comer Tarta
-    public const int PIZZAPOINTS = 500; // Cantidad de puntos que ganamos al comer Pizza
+    //public const int APPLEPOINTS = 100; // Cantidad de puntos que ganamos al comer Manzanas
+    //public const int CAKEPOINTS = 300; // Cantidad de puntos que ganamos al comer Tarta
+    //public const int PIZZAPOINTS = 500; // Cantidad de puntos que ganamos al comer Pizza
 
     public static event EventHandler OnHighScoreChange;
 
