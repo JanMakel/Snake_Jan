@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 100
   sprite: {fileID: 21300000, guid: fab1cffb3db1d41cc82e8300b33e7777, type: 3}
+  floatingPoints: {fileID: 679086330811666326, guid: 73427c58ebee2394cbe3387c502587d7, type: 3}

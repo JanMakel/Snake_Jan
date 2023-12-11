@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UIElements;
-
+using TMPro;
 public class LevelGrid
 {
     private Vector2Int foodGridPosition;
     private GameObject foodGameObject;
+
     
+
     private int width;
     private int height;
 
@@ -30,7 +32,9 @@ public class LevelGrid
     {
         if (snakeGridPosition == foodGridPosition)
         {
-            ScoreUI.ShowPointChange(foodSO.points);
+            
+            
+            GameObject.Instantiate(foodSO.floatingPoints, foodGameObject.transform.position, Quaternion.identity);
             Score.AddScore(foodSO.points);
 
             /*

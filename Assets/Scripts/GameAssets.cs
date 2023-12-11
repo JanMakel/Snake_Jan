@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 public class GameAssets : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameAssets : MonoBehaviour
 
     public FoodSO[] foodSOArray;
 
+    
 
     public SoundAudioClip[] soundAudioClipsArray;
 

@@ -8,7 +8,7 @@ public class FoodSO : ScriptableObject
     
     public int points;
     public Sprite sprite;
-    
+    public GameObject floatingPoints;
 
 
 }
