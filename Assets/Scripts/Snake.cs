@@ -203,7 +203,7 @@ public class Snake : MonoBehaviour
         {
             gridMoveTimer -= gridMoveTimerMax; // Se reinicia el temporizador
             
-            SoundManager.PlaySound(SoundManager.Sound.SnakeMove);
+            SoundManager.PlaySound(SoundManager.Sound.SnakeMove, 0.5f);
             
             SnakeMovePosition previousSnakeMovePosition = null;
             if (snakeMovePositionsList.Count > 0)
@@ -241,6 +241,7 @@ public class Snake : MonoBehaviour
             if (snakeAteFood)
             {
                 // El cuerpo crece
+                SoundManager.PlaySound(SoundManager.Sound.SnakeEat);
                 snakeBodySize++;
                 CreateBodyPart();
             }
@@ -257,6 +258,7 @@ public class Snake : MonoBehaviour
                 if (gridPosition == movePosition.GetGridPosition()) // Posición de la cabeza coincide con alguna parte del cuerpo
                 {
                     // GAME OVER
+                    SoundManager.PlaySound(SoundManager.Sound.SnakeDie);
                     state = State.Dead;
                     GameManager.Instance.SnakeDied();
                 }
@@ -283,8 +285,8 @@ public class Snake : MonoBehaviour
             }
         }
         
+
         // Cambio dirección hacia abajo
-        // Input es abajo?
         if (verticalInput < 0)
         {
             // Mi dirección hasta ahora era horizontal

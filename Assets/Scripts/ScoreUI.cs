@@ -42,15 +42,7 @@ public class ScoreUI : MonoBehaviour
         highScoreText.text = highScore.ToString();
     }
 
-    public void ShowPointChange(int change)
-    {
-        var inst = Instantiate(pointChangePrefab, Vector3.zero, Quaternion.identity);
-        inst.transform.SetParent(pointParent, false);
-
-        
-
-        
-    }
+    
 
     public void UpdateScoreText(int score)
     {

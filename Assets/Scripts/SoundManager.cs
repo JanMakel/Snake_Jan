@@ -10,7 +10,8 @@ public static class SoundManager
         ButtonOver,
         SnakeDie,
         SnakeEat,
-        SnakeMove
+        SnakeMove,
+        GameOver
     }
 
     private static GameObject soundManagerGameObject;
@@ -29,11 +30,11 @@ public static class SoundManager
         }
     }
     
-    public static void PlaySound(Sound sound)
+    public static void PlaySound(Sound sound, float volume = 1f)
     {
-        audioSource.PlayOneShot(GetAudioClipFromSound(sound));
+        audioSource.PlayOneShot(GetAudioClipFromSound(sound), volume);
     }
-
+  
     private static AudioClip GetAudioClipFromSound(Sound sound)
     {
         foreach (GameAssets.SoundAudioClip soundAudioClip in GameAssets.Instance.soundAudioClipsArray)
